@@ -2,14 +2,14 @@
 
 This repo constains the pytorch implementation for the ECCV 2018 paper [(arxiv)](https://arxiv.org/pdf/.pdf).
 We use deep networks to learn feature representations optimized for nearest neighbor classifiers, which could generalize better for new object categories.
-We re-investigate the [Neighborhood Component Analysis (NCA)](http://www.cs.toronto.edu/~fritz/absps/nca.pdf), and we propose a technique to make it 
-scalable to deep networks and large-scale datasets.
+This project is a re-investigation of [Neighborhood Component Analysis (NCA)](http://www.cs.toronto.edu/~fritz/absps/nca.pdf)
+with recent technologies to make it scalable to deep networks and large-scale datasets.
 
-Much of code is extened from the previous [unsupervised learning project](https://arxiv.org/pdf/1805.01978.pdf).
+Much of code is extended from the previous [unsupervised learning project](https://arxiv.org/pdf/1805.01978.pdf).
 Please refer to [this repo](https://github.com/zhirongw/lemniscate.pytorch) for more details.
 
 
-## Pretrained Model
+## Pretrained Models
 
 Currently, we provide three pretrained ResNet models.
 Each release contains the feature representation of all ImageNet training images (600 mb) and model weights (100-200mb).
@@ -17,6 +17,8 @@ Each release contains the feature representation of all ImageNet training images
 - [ResNet 18](http://zhirongw.westus2.cloudapp.azure.com/models/snca_resnet18.pth.tar) (top 1 accuracy 70.59%)
 - [ResNet 34](http://zhirongw.westus2.cloudapp.azure.com/models/snca_resnet34.pth.tar) (top 1 accuracy 74.41%)
 - [ResNet 50](http://zhirongw.westus2.cloudapp.azure.com/models/snca_resnet50.pth.tar) (top 1 accuracy 76.57%)
+
+Code to reproduce the rest of the experiments are comming soon.
 
 ## Nearest Neighbors
 
@@ -49,8 +51,8 @@ Please refer to the official repo for details of data preparation and hardware c
   Currently, the implementation of nca module is not paralleled across multiple GPUs.
   Hence, the first GPU will consume much more memory than the others.
   For example, when training a ResNet18 network, GPU 0 will consume 11GB memory, while the others each takes 2.5GB.
-  You will need to set the Caffe style "iter_size" for training deep networks.
-  Our released models are trained with V100 machines 
+  You will need to set the Caffe style "-b 128 --iter-size 2" for training deep networks.
+  Our released models are trained with V100 machines.
   
 - Training on CIFAR10:
 
@@ -74,7 +76,7 @@ For any questions, please feel free to reach
 Zhirong Wu: xavibrowu@gmail.com
 ```
 
-# Contributing
+## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
