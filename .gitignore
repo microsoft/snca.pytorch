@@ -1,0 +1,10 @@
+data/*
+checkpoint/*
+logs/*
+others/*
+
+*.pyc
+*.bak
+*.log
+*.tar
+*.pth
