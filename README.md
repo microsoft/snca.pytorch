@@ -8,6 +8,7 @@ with recent technologies to make it scalable to deep networks and large-scale da
 Much of code is extended from the previous [unsupervised learning project](https://arxiv.org/pdf/1805.01978.pdf).
 Please refer to [this repo](https://github.com/zhirongw/lemniscate.pytorch) for more details.
 
+<img src="http://zhirongw.westus2.cloudapp.azure.com/figs/snca.png" width="800px"/>
 
 ## Pretrained Models
 
@@ -26,6 +27,8 @@ Code to reproduce the rest of the experiments are comming soon.
 Please follow [this link](http://zhirongw.westus2.cloudapp.azure.com/nn.html) for a list of nearest neighbors on ImageNet.
 Results are visualized from our ResNet50 feature, compared with baseline ResNet50 feature, raw image features and previous unsupervised features.
 First column is the query image, followed by 20 retrievals ranked by the similarity.
+
+<img src="http://zhirongw.westus2.cloudapp.azure.com/figs/nn.png" width="800px"/>
 
 ## Usage
 
@@ -52,7 +55,7 @@ Please refer to the official repo for details of data preparation and hardware c
   Currently, the implementation of nca module is not paralleled across multiple GPUs.
   Hence, the first GPU will consume much more memory than the others.
   For example, when training a ResNet18 network, GPU 0 will consume 11GB memory, while the others each takes 2.5GB.
-  You will need to set the Caffe style "-b 128 --iter-size 2" for training deep networks.
+  You will need to set the Caffe style "-b 128 --iter-size 2" for training deeper networks.
   Our released models are trained with V100 machines.
   
 - Training on CIFAR10:
