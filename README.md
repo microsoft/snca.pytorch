@@ -1,6 +1,6 @@
 ## Improving Generalization via Scalable Neighborhood Component Analysis
 
-This repo constains the pytorch implementation for the ECCV 2018 paper [(arxiv)](https://arxiv.org/pdf/.pdf).
+This repo constains the pytorch implementation for the ECCV 2018 paper [(paper)](https://arxiv.org/pdf/1808.04699.pdf).
 We use deep networks to learn feature representations optimized for nearest neighbor classifiers, which could generalize better for new object categories.
 This project is a re-investigation of [Neighborhood Component Analysis (NCA)](http://www.cs.toronto.edu/~fritz/absps/nca.pdf)
 with recent technologies to make it scalable to deep networks and large-scale datasets.
@@ -13,6 +13,7 @@ Please refer to [this repo](https://github.com/zhirongw/lemniscate.pytorch) for 
 
 Currently, we provide three pretrained ResNet models.
 Each release contains the feature representation of all ImageNet training images (600 mb) and model weights (100-200mb).
+Models and their performance with nearest neighbor classifiers are as follows.
 
 - [ResNet 18](http://zhirongw.westus2.cloudapp.azure.com/models/snca_resnet18.pth.tar) (top 1 accuracy 70.59%)
 - [ResNet 34](http://zhirongw.westus2.cloudapp.azure.com/models/snca_resnet34.pth.tar) (top 1 accuracy 74.41%)
